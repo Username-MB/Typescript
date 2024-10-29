@@ -1,3 +1,7 @@
-import bodyParser from 'body-parser';
 import express from 'express';
-import produtoR
+import bodyParser from 'body-parser';
+import ProdutoRoutes from './ProdutoRoutes';
+import { pool } from './database';
+import path from 'path';
+
+const app = express();
