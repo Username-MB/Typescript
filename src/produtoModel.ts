@@ -17,7 +17,19 @@ export class ProdutoModel{
 
 
 
-   //create()
+   //create
+   async create( produto: Produto): Promise <void>{
+    await pool.query('INSERT INTO produtos (nome, preco) VALUES(?, ? )',
+    [produto.nome, produto.preco]);
+   }
+
    // update()
+   async update(id: number, produto:Produto): Promise<void>{
+    await pool.query('UPDATE produtos SET nome = ?, preco = ? where id = ?',
+    [produto.nome, produto.preco, id]);
+   }
    // delete()
+   async delete(id:Number):Promise<void>{
+    await pool.query('DELETE FROM produtos WHERE id = ?',[id]);
+   }
 }
