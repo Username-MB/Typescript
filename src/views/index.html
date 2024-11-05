@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="js/criar.js">
+        //ENVIAR REQUISIÇÃO
+
+    </script>
+  </head>
+  <body>
+    <style>
+      #box {
+        background-color: bisque;
+        width: 500px;
+        height: 500px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+      }
+      form{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+      }
+    </style>
+    <center>
+      <div id="box">
+        <h1>Criar produto</h1>
+        <form id="createForm">
+            <label for="nome"></label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="preco"></label>
+            <input type="text" id="preco" name="preco" required>
+            <button type="submit">Criar Produto</button>
+        </form>
+      </div>
+    </center>
+  </body>
+</html>

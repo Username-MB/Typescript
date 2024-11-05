@@ -17,19 +17,19 @@ export class ProdutoModel{
 
 
 
-   //create
+   //CREATE
+
    async create( produto: Produto): Promise <void>{
-    await pool.query('INSERT INTO produtos (nome, preco) VALUES(?, ? )',
-    [produto.nome, produto.preco]);
+    await pool.query('INSERT INTO produtos (nome, preco) VALUES(?, ? )', [produto.nome, produto.preco]);    
    }
 
-   // update()
-   async update(id: number, produto:Produto): Promise<void>{
-    await pool.query('UPDATE produtos SET nome = ?, preco = ? where id = ?',
-    [produto.nome, produto.preco, id]);
+   // UPDATE
+   async update(id: number, produto: Produto): Promise<void>{
+    await pool.query('UPDATE produtos SET nome = ?, preco = ? WHERE id = ?', [produto.nome, produto.preco, id]);
    }
-   // delete()
-   async delete(id:Number):Promise<void>{
-    await pool.query('DELETE FROM produtos WHERE id = ?',[id]);
+
+   // DELETE
+   async delete(id: number): Promise<void>{
+    await pool.query('DELETE FROM produtos WHERE id = ? ', [id]);
    }
 }
